@@ -1,5 +1,20 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+message_list:
+    path:       /messages
+    controller: App\Controller\MessageController::list
+    methods:    GET
+api_message_show:
+    path:       /api/messages/{id}
+    controller: App\Controller\MessageController::show
+    methods:    GET|HEAD
+api_message_store:
+    path:       /api/messages
+    controller: App\Controller\MessageController::store
+    methods:    POST
+api_message_update:
+    path:       /api/messages/{id}
+    controller: App\Controller\MessageController::update
+    methods:    PUT
+api_message_edit:
+    path:       /api/messages/{id}
+    controller: App\Controller\MessageController::delete
+    methods:    DELETE
