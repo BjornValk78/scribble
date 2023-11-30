@@ -19,6 +19,12 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    App\CommandBus:
+        arguments:
+            - !service_locator
+                'Scribble\IncomingHandler': '@app.command_handler.incoming'
+                'Scribble\OutgoingHandler': '@app.command_handler.outgoing'
+                'Scribble\TaskHandler': '@app.command_handler.task'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
